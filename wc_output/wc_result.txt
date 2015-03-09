@@ -1,0 +1,9 @@
+ali	1
+amir	1
+baba	2
+haminjam	2
+hassan	1
+inja	1
+manam	2
+mojgab	1
+test	1
