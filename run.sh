@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# this file gives permission to p.py, p2.py, word_count.cpp and median_final.cpp. Then it complies them and eventually run them.
 cd src
 chmod +x p.py
 chmod +x p2.py

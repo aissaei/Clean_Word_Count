@@ -1,3 +1,6 @@
+# This file count the number of words on the file and write it
+# on the text file. The result will be used by median_final.cpp
+
 from __future__ import print_function
 import glob
 import os
