@@ -1,0 +1,88 @@
+istringstream linestream(line);
+                
+                  
+                   
+                   
+                while (linestream>>word)
+                 
+            {
+                
+                
+                remove_copy_if(word.begin(), word.end(),back_inserter(word_copy),
+                               ptr_fun<int, int>(ispunct));
+                transform(word_copy.begin(), word_copy.end(), word_copy.begin(), ::tolower);
+                
+                for (unsigned int m = 0; m < strlen(chars); ++m)
+                {
+                    word_copy.erase (std::remove(word_copy.begin(), word_copy.end(), chars[i]), word_copy.end());
+                }
+                
+                unique_words.insert(word_copy);
+                if(unique_words.size()!=set_size)
+                {
+                    words.push_back(word_copy);
+                    counts.push_back(1);
+                    set_size++;
+                    
+                }
+                else
+                {
+                    
+                    for(j=0;j<=words.size()-1;++j)
+                    {
+                        
+                        if(words.at(j)==word_copy)
+                        {
+                            counts.at(j)=counts.at(j)+1;
+                            
+                        }
+                        
+                    }
+                }
+                
+                
+                word_copy.clear();
+              
+                
+            }
+                
+               
+                for (l=0;l<=counts.size()-1;l++)
+                {
+                    sum=sum+counts.at(l);
+                    
+                }
+               
+                words_on_lines.push_back(sum);
+                
+                sort( words_on_lines.begin(), words_on_lines.end());
+                
+                if(div(words_on_lines.size(),2).rem==0)
+                {
+                  
+                    
+                    median=(words_on_lines.at(div(words_on_lines.size(),2).quot-1)+words_on_lines.at(div(words_on_lines.size(),2).quot))/2.0;
+                    
+                }
+                else
+                {
+                    
+                    median=words_on_lines.at(div(words_on_lines.size(),2).quot);
+                    
+                }
+                myfileo<<median<<"\n";
+                sum=0;
+                counts.clear();
+               }
+                
+        }
+            
+
+        myfile.close();
+        
+    }
+        
+
+        
+}
+    myfileo.close();
